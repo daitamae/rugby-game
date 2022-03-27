@@ -1,6 +1,7 @@
 // Standard headers
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Internal headers
 #include "direction.h"
@@ -62,7 +63,7 @@ direction_t execute_defender_strategy(
   // TODO: unused parameters, remove these lines later
 
   static int count = 0;
-  if(count==0)srand(123123124);
+  if(count==0)srand(time(NULL));
 
   static position_t last_position;
   static direction_t last_direction;
@@ -101,7 +102,7 @@ direction_t execute_defender_strategy(
     {
       down_lim = 0.7;
       up_lim = 0.9;
-    }else if(attacker_position.i>defender_position.i)
+    }else if(attacker_position.i<defender_position.i)
     {
       down_lim = 0.1;
       up_lim = 0.3;

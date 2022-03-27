@@ -1,6 +1,7 @@
 // Standard headers
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Internal headers
 #include "direction.h"
@@ -63,7 +64,7 @@ direction_t execute_attacker_strategy(
   
   static int count = 0;
 
-  if(count==0)srand(1);
+  if(count==0)srand(time(NULL));
 
   static position_t last_position;
   static direction_t last_direction;
